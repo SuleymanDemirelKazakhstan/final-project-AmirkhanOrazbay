@@ -26,11 +26,15 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	background-color: #86EAEA;
+	background-color: #43BF99;
 }
 
 .logo {
 	margin: 15px;
+}
+
+.logo img {
+	width: 200px;
 }
 
 .btnStartWork {
@@ -41,7 +45,6 @@ header {
 	color: black;
 }
 
-
 .intro {
 	position: relative;
 	display: flex;
@@ -51,6 +54,7 @@ header {
 }
 
 .leftPart {
+	margin: 15px;
 	color: white;
 	align-self: center;
 }
@@ -58,16 +62,18 @@ header {
 .signUpForm {
 	display: flex;
 	justify-content: space-between;
-	margin: 100px;
+	margin: 100px 100px 0;
 }
 
-.btnSignUp {
+.leftPart .btnSignUp {
+	width: 120px;
+	padding: 10px;
 	background-color: #00D151;
 }
 
 .signUpForm input {
 	font-size: 18px;
-	width: 250px;
+	width: 300px;
 	height: 35px;
 	margin: auto 0;
 }
@@ -77,11 +83,7 @@ header {
 }
 
 .rightPart .image img {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	width: 500px;
-
+	width: 600px;
 }
 
 .mainSection {
@@ -102,6 +104,7 @@ header {
 	text-align: center;
 	padding: 0 100px 100px;
 }
+
 .card img {
 	width: 500px;
 }
@@ -118,4 +121,6 @@ footer {
 }
 
 
+
+/*animation*/
 
