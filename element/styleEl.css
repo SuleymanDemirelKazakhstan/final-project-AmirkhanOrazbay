@@ -3,11 +3,6 @@
 	padding: 0;
 }
 
-.page {
-	display: flex;
-	flex-direction: column;
-}
-
 header {
 	display: flex;
 	align-items: center;
@@ -19,19 +14,61 @@ header {
 	margin: 15px;
 }
 
+.tableInfo {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: #35DED4;
 
-
-footer {
-	background-color: black;
-	color: white;
-	text-align: center;
-	margin-top: auto;
-}
-
-.copyRight {
-	padding: 25px;
 	font-size: 32px;
 }
 
 
+.tables {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 50px; 
+}
 
+.table {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	background-color: #DDFFFD;
+	min-height: 200px;
+	min-width: 200px;
+	text-align: center;
+	overflow: hidden;
+
+	border: 3px blue solid;
+}
+
+.table .tableName {
+	width: 100%;
+	background-color: #AEFAFF;
+	font-size: 24px;
+	padding: 15px; 
+}
+
+.table .task, .table .btnAddTask {
+	width: 80%;
+	background-color: #ABFFCD;
+	font-size: 18px;
+	margin: 5px; 
+}
+
+.table .btnAddTask {
+	font-weight: bold;
+}
+
+.tables .btnAddTable {
+	background-color: #DDFFFD;
+	text-align: center;
+	height: 30px;
+	font-size: 24px;
+	padding: 15px;
+	border: 3px blue solid; 
+	font-weight: bold;
+}
