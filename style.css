@@ -3,6 +3,11 @@
 	padding: 0;
 }
 
+.page {
+	display: flex;
+	flex-direction: column;
+}
+
 .btnStartWork, .btnSignUp {
 	height: 50px;
 	border-radius: 15px;
