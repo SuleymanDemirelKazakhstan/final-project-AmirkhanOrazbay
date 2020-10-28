@@ -14,6 +14,10 @@ header {
 	margin: 15px;
 }
 
+.logo img {
+	width: 200px;
+}
+
 .tableInfo {
 	display: flex;
 	justify-content: space-around;
