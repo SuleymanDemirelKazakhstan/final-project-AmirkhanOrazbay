@@ -1,0 +1,183 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+}
+
+.btnStartWork, .btnSignUp {
+	height: 50px;
+	border-radius: 15px;
+	margin: 15px;
+	padding: 5px 10px;
+}
+
+a, .leftPart .text, .mainSec{
+	text-decoration: none;
+	font-family: 'Nova Slim';
+	font-size: 32px;
+	color: white;
+}
+
+header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #43BF99;
+}
+
+.logo {
+	margin: 15px;
+}
+
+.logo img {
+	width: 200px;
+}
+
+.btnStartWork {
+	padding-top: 20px;
+	background-color: yellow;
+}
+
+.btnStartWork a {
+	color: black;
+}
+
+.intro {
+	display: flex;
+	position: relative;
+	justify-content: space-around;
+	background-color: #43BF99;
+	padding: 50px;
+}
+
+.leftPart {
+	margin: 15px;
+	color: white;
+	align-self: center;
+	font-size: 36px;
+}
+
+.signUpForm {
+	width: 100%;
+	display: flex;
+	margin: 100px 50px 0;
+}
+
+.leftPart .btnSignUp {
+	width: 120px;
+	padding: 10px;
+	background-color: #00D151;
+}
+
+.inputForm {
+	display: flex;
+	height: 60px;
+	width: 50%;
+	position: relative;
+}
+
+.inputForm input{
+	font-size: 32px;
+	width: 100%;
+	height: 100%;
+	color: white;
+	padding: 20px 5px 0;
+	border: none;
+	background-color: #43BF99;
+}
+
+.inputForm label {
+	position: absolute;
+	bottom: -13px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	border-bottom: 3px solid white;
+}
+
+.inputForm label:after {
+	display: none;
+	content: "";
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	border-bottom: 5px solid #00B141;
+	width: 100%;
+	height: 100%;
+	transform: translateX(-100%);
+	transition: all 0.3s ease;
+}
+
+.spanEmail {
+	position: absolute;
+	bottom: 5px;
+	left: 0;
+	transition: all 0.3s ease;
+	/*font-size: 24px;*/
+	color: white;	
+}
+
+.inputForm input:focus + .labelEmail .spanEmail,
+.inputForm input:valid + .labelEmail .spanEmail
+{
+	transform: translateY(-120%);
+}
+
+
+.inputForm input:focus + .labelEmail:after,
+.inputForm input:focus + .labelEmail:after {
+	display: initial;
+	transform: translateX(0%);
+}
+
+.btnSignUp { 
+	height: 35px;
+}
+
+.rightPart .image img {
+	width: 600px;
+}
+
+.mainSection {
+	margin: 25px;
+	display: flex;
+	flex-direction: column;
+	font-family: 'Mate SC';
+	font-size: 32px;
+}
+
+.card {
+	display: flex;
+	justify-content: space-between;
+	margin: 50px;
+}
+
+.card .text {
+	text-align: center;
+	padding: 0 100px 100px;
+}
+
+.card img {
+	width: 500px;
+}
+
+footer {
+	background-color: black;
+	color: white;
+	text-align: center;
+}
+
+.copyRight {
+	padding: 25px;
+	font-size: 32px;
+}
+
+
+
+/*animation*/
+

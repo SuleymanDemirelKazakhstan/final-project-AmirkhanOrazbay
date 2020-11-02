@@ -31,20 +31,21 @@ main {
 .leftPart {
 	margin-left: 5%;
 	margin-right: 20%;
+	border-radius: 15px;
 }
 
 .menu {
-	background-color: #01c5c4;
+	background-color: #4a69bb;
 	padding: 10px;
-	color : #006884;
+	color : #617be3;
 	height: 170px;
 }
 
 .item {
-	background-color: #b8de6f;
+	background-color: #9aceff;
 	border-radius: 15px;
 	margin: 15px;
-	padding: 0 15px;
+	padding: 5px 15px;
 }
 
 .rightPart {
