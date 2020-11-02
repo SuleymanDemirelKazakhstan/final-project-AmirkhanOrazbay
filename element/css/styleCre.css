@@ -56,6 +56,10 @@ main .wrapCenter {
 	border-radius: 15px;
 }
 
+.tableName h3{
+	display: inline;
+}
+
 .btnAddTable {
 	text-align: center;
 }
@@ -74,9 +78,21 @@ input {
 }
 
 .btnCreate {
-	background-color: green;
 	padding: 15px;
 	border-radius: 15px;
+}
+
+.btnCreate[data-color='gray'] {
+	background-color: gray;
+	cursor: default;
+	pointer-events: none;        
+	text-decoration: none;
+}
+
+.btnCreate[data-color='green'] {
+	background-color: green;
+	cursor: default;
+    pointer-events: auto; 
 }
 
 .btnCreate a{
@@ -85,7 +101,14 @@ input {
 }
 
 .checkbox {
-	background-color: white;
 	width: 25px;
 	height: 25px;
+}
+
+.checkbox[data-status='false'] {
+	background-color: white;
+}
+
+.checkbox[data-status='true'] {
+	background-color: green;
 }

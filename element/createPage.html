@@ -5,7 +5,7 @@
 	<link rel="stylesheet" href="../css/nullify.css">
 	<link rel="stylesheet" type="text/css" href="css/styleCre.css">
 	<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@200&display=swap" rel="stylesheet">
-	<link rel="icon" href="img/favicon.ico">
+	<link rel="icon" href="../img/favicon.ico">
 </head>
 <body>
 	<header>
@@ -23,35 +23,36 @@
 						<input type="text" placeholder="Name">
 					</div>
 				</div>
-				<div class="card">
+				<div class="tables card">
 					<h1>Table List : </h1>
-					<div class="tableName">
-						<h3>1) table name</h3>
-					</div>
-					<div class="tableName">
-						<h3>2) table name</h3>
+					<div class="tableNames">
+						<div class="tableName">
+							<h3>1)</h3>
+							<h3 contenteditable="true">Write table name</h3>
+						</div>
 					</div>
 					<div class="btnAddTable">
 						<h3>+ Add table name</h3>
 					</div>
 				</div>
 				<div class="card">
-					<div class="info">
+					<div id="private" class="info">
 						<h1>Private : </h1>
-						<div class="checkbox"></div>
+						<div class="checkbox" data-status='false'></div>
 					</div>
-					<div class="info">
+					<div id="favourite" class="info">
 						<h1>Favourite : </h1>
-						<div class="checkbox"></div>
+						<div class="checkbox" data-status='false'></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="wrapCenter">
-			<div class="btnCreate">
+			<div class="btnCreate" data-color="gray">
 				<h1><a href="elementPage.html">Create</a></h1>
 			</div>
 		</div>
 	</main>
+	<script type="text/javascript" src="script/createScript.js"></script>
 </body>
 </html>

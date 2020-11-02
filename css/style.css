@@ -8,18 +8,17 @@
 	flex-direction: column;
 }
 
-.btnStartWork, .btnSignUp {
+.btnStartWork, .btnSignUp, a{
 	height: 50px;
 	border-radius: 15px;
 	margin: 15px;
 	padding: 5px 10px;
 }
 
-a, .leftPart .text, .mainSec{
+a, .leftPart .text, .cards{
 	text-decoration: none;
 	font-family: 'Nova Slim';
 	font-size: 32px;
-	color: white;
 }
 
 header {
@@ -68,9 +67,14 @@ header {
 }
 
 .leftPart .btnSignUp {
-	width: 120px;
-	padding: 10px;
+	width: 200px;
 	background-color: #00D151;
+	padding: 10px 0;
+}
+
+.leftPart .btnSignUp a {
+	margin: 0 25px;
+	color: white;
 }
 
 .inputForm {
@@ -118,7 +122,6 @@ header {
 	bottom: 5px;
 	left: 0;
 	transition: all 0.3s ease;
-	/*font-size: 24px;*/
 	color: white;	
 }
 
@@ -143,7 +146,7 @@ header {
 	width: 600px;
 }
 
-.mainSection {
+.cards {
 	margin: 25px;
 	display: flex;
 	flex-direction: column;
@@ -160,6 +163,10 @@ header {
 .card .text {
 	text-align: center;
 	padding: 0 100px 100px;
+}
+
+h1, h3 {
+	margin-bottom: 25px;
 }
 
 .card img {
