@@ -47,8 +47,20 @@ input {
 	color: white;
 }
 
+.signUpBtn[data-color='gray'] {
+    background-color: gray;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+}
+
+.signUpBtn[data-color='blue'] {
+    background-color: #34a2df;
+    cursor: default;
+    pointer-events: auto;
+}
+
 .signUpBtn {
-	background-color: #44f2ff;
 	margin: 15px auto;
 	width: 200px;
 	font-size: 32px;

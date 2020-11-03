@@ -18,13 +18,23 @@ header {
 	width: 200px;
 }
 
+
 .tableInfo {
+	position: relative;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 	background-color: #35DED4;
 	padding: 15px 0;
 	font-size: 32px;
+	color: white;
+}
+
+.tableInfo .fa {
+	position: absolute;
+	left: 3%;
+	top: 20px;
+	cursor: default;
 	color: white;
 }
 
