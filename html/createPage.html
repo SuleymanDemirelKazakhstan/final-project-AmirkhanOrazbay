@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<title>Create page</title>
 	<link rel="stylesheet" href="../css/nullify.css">
@@ -7,6 +8,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@200&display=swap" rel="stylesheet">
 	<link rel="icon" href="../img/favicon.ico">
 </head>
+
 <body>
 	<header>
 		<div class="logo">
@@ -15,44 +17,51 @@
 	</header>
 
 	<main>
-		<div class="wrapCenter">
-			<div class="form">	
-				<div class="info card">
-					<h1>Name : </h1>
-					<div class="nameInput">
-						<input type="text" placeholder="Name">
-					</div>
-				</div>
-				<div class="tables card">
-					<h1>Table List : </h1>
-					<div class="tableNames">
-						<div class="tableName">
-							<h3>1)</h3>
-							<h3 contenteditable="true">Write table name</h3>
+		<form action="/html/elementPage.html">
+			<div class="wrapCenter">
+				<div class="form">
+					<div class="info card">
+						<h1>Name : </h1>
+						<div class="nameInput">
+							<input type="text" placeholder="Name" name="name">
 						</div>
 					</div>
-					<div class="btnAddTable">
-						<h3>+ Add table name</h3>
+					<div class="tables card">
+						<h1>Table List : </h1>
+						<div class="tableNames">
+							<div class="tableName">
+								<label for="tableName">1)</label>
+								<input type="text" name="tableName" placeholder="Write table name">
+							</div>
+						</div>
+						<div class="btnAddTable">
+							<div>+ Add table name</div>
+						</div>
 					</div>
-				</div>
-				<div class="card">
-					<div id="private" class="info">
-						<h1>Private : </h1>
-						<div class="checkbox" data-status='false'></div>
-					</div>
-					<div id="favourite" class="info">
-						<h1>Favourite : </h1>
-						<div class="checkbox" data-status='false'></div>
+					<div class="card">
+						<div id="private" class="info">
+							<h1>Private : </h1>
+							<div class="checkbox" data-status='false'>
+								<input type="checkbox" name="private">
+							</div>
+						</div>
+						<div id="favourite" class="info">
+							<h1>Favourite : </h1>
+							<div class="checkbox" data-status='false'>
+								<input type="checkbox" name="favourite">
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="wrapCenter">
-			<div class="btnCreate" data-color="gray">
-				<h1><a href="elementPage.html">Create</a></h1>
+			<div class="wrapCenter">
+				<div class="btnCreate" data-color="gray">
+					<input type="submit" value="Create">
+				</div>
 			</div>
-		</div>
+		</form>
 	</main>
 	<script type="text/javascript" src="../script/createScript.js"></script>
 </body>
+
 </html>

@@ -23,25 +23,14 @@ function createTableName() {
 	var tableNames = document.querySelector('.tableNames');
 	var childNodes = tableNames.childNodes;
 	var len = childNodes.length;
-
-	if (len%2==0) len = len - 1;
-	else len = len-2;
-
-	var lastChildNodes = childNodes[len].childNodes;
-	
-	len = lastChildNodes.length;
-	if (len > 2) len = 1;
-	else len = 0;
-
-	var count = lastChildNodes[len].innerHTML.charAt(0);
+	console.log(childNodes);
 	var tableName = document.createElement('div');
 	tableName.className = 'tableName';
 
-	var counterH3 = document.createElement('h3');
-	counterH3.innerHTML = (parseInt(count)+1) + ') ';
-	var nameH3 = document.createElement('h3');
-	nameH3.contentEditable = 'true';
-	nameH3.innerHTML = 'Write table name';
+	var counterH3 = document.createElement('label');
+	counterH3.innerHTML = 1 + ') ';
+	var nameH3 = document.createElement('input');
+	nameH3.placeholder = 'Write table name';
 
 	tableName.appendChild(counterH3);
 	tableName.appendChild(nameH3);

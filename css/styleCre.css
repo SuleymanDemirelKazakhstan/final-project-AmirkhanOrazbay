@@ -33,6 +33,10 @@ main .wrapCenter {
 	color: #006884;
 }
 
+.form input {
+	font-size: 24px;
+}
+
 
 .info {
 	display: flex;
@@ -56,8 +60,13 @@ main .wrapCenter {
 	border-radius: 15px;
 }
 
-.tableName h3{
-	display: inline;
+.tableName label {
+	font-size: 24px;
+}
+
+.tableName input {
+	background-color: #f1e189;
+	color: #006884;
 }
 
 .btnAddTable {
@@ -71,25 +80,20 @@ main .wrapCenter {
 	padding: 5px;
 }
 
-input {
-	font-size: 18px;
-	height: 35px;
-	border : none;
-}
-
-.btnCreate {
-	padding: 15px;
+.btnCreate input {
+	padding: 5px 15px;
 	border-radius: 15px;
+	font-size: 28px;
 }
 
-.btnCreate[data-color='gray'] {
+.btnCreate[data-color='gray'] input {
 	background-color: gray;
 	cursor: default;
 	pointer-events: none;        
 	text-decoration: none;
 }
 
-.btnCreate[data-color='green'] {
+.btnCreate[data-color='green'] input {
 	background-color: green;
 	cursor: default;
     pointer-events: auto; 
@@ -103,12 +107,13 @@ input {
 .checkbox {
 	width: 25px;
 	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.checkbox[data-status='false'] {
-	background-color: white;
-}
-
-.checkbox[data-status='true'] {
-	background-color: green;
+.checkbox input  {
+	display: block;
+	width: 25px;
+	height: 25px;
 }
