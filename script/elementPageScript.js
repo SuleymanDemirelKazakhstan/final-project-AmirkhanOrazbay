@@ -1,24 +1,23 @@
-let addTaskBtns = document.querySelectorAll('.btnAddTask');
 let tables = document.querySelectorAll('.table');
 
 let addTableBtn = document.querySelector('.btnAddTable');
 addTableBtn.addEventListener('click', createTable);
 
+let addTaskBtns = document.querySelectorAll('.btnAddTask');
 for (let i = 0; i < addTaskBtns.length; i++) {
-	addTaskBtns[i].addEventListener('click', function(event) {
-		addTask(i, event);
-	});
+	addTaskBtns[i].addEventListener('click', addTask);
 }
 
-function addTask(i, event) {
-	var tableChild = tables[i].childNodes;
-	var tasks = tableChild[3];
-	
-	var task = document.createElement('div');
+function addTask(event) {
+	var tableChild = event.target.parentNode;
+	var tasks = tableChild.childNodes[3];
+	if (!tasks) tasks = tableChild.childNodes[1];
+	console.log(tasks);
+	var task = document.createElement('input');
 	task.className = 'task';
-	task.innerHTML = 'task';
 
 	tasks.appendChild(task);
+	task.focus();
 }
 
 function createTable() {
@@ -28,7 +27,8 @@ function createTable() {
 	var tableDiv = document.createElement('div');
 	tableDiv.className = 'table';
 
-	var tableName = document.createElement('div');
+	var tableName = document.createElement('input');
+	tableName.type = 'text';
 	tableName.innerHTML = 'Table name';
 	tableName.className = 'tableName';
 	tableDiv.appendChild(tableName);
@@ -42,7 +42,15 @@ function createTable() {
 	addBtn.innerHTML = '+ Add Task';
 	tableDiv.appendChild(addBtn);
 
-	wrap.appendChild(tableDiv)
-	document.querySelector('.tables').appendChild(wrap);
+	wrap.appendChild(tableDiv);
+	document.querySelector('.tables').insertBefore(wrap, addTableBtn.parentNode);
+	tableName.focus();
+	load();
+}
+
+function load() {
 	addTaskBtns = document.querySelectorAll('.btnAddTask');
+	for (let i = 0; i < addTaskBtns.length; i++) {
+		addTaskBtns[i].addEventListener('click', addTask);
+	}
 }

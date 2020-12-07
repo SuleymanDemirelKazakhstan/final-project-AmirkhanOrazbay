@@ -1,0 +1,24 @@
+<div class="tableInfo">
+    <a href="/html/listPage" class="afa">
+        <i style="font-size:24px" class="fa">&#xf0a8;</i>
+    </a>
+    <div class="name">{{name}}</div>
+    <div class="{{favorite}}"><img src="" alt="start"></div>
+    <div class="{{private}}">Private</div>
+</div>
+<main>
+    <div class="tables">
+        {{#each tableNames}}
+        <div class="wrapper">
+            <div class="table">
+                <input type="text" class="tableName" value="{{this}}">
+                <div class="tasks"></div>
+                <div class="btnAddTask">+ Add Task</div>
+            </div>
+        </div>
+        {{/each}}
+        <div>
+            <div class="btnAddTable">+ Add Table</div>
+        </div>
+    </div>
+</main>
