@@ -6,7 +6,7 @@ const handlebars = handlebarsExp.create();
 const app = express();
 const router = require('./router');
 
-const port = 3000;
+const PORT = process.env.PORT || 8080;
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
@@ -16,4 +16,4 @@ app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(router.router);
 
-app.listen(port, () => console.log(`listen ${port}`));
+app.listen(PORT, () => console.log(`listen ${PORT}`));
