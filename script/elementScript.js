@@ -22,6 +22,8 @@ function addTask(i, event) {
 }
 
 function createTable() {
+	var wrap = document.createElement('div');
+	wrap.className = 'wrapper';
 
 	var tableDiv = document.createElement('div');
 	tableDiv.className = 'table';
@@ -40,6 +42,7 @@ function createTable() {
 	addBtn.innerHTML = '+ Add Task';
 	tableDiv.appendChild(addBtn);
 
-	document.querySelector('.tables').appendChild(tableDiv);
+	wrap.appendChild(tableDiv)
+	document.querySelector('.tables').appendChild(wrap);
 	addTaskBtns = document.querySelectorAll('.btnAddTask');
 }

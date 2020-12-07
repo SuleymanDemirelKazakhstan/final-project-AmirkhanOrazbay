@@ -3,6 +3,7 @@
 	padding: 0;
 }
 
+
 header {
 	display: flex;
 	align-items: center;
@@ -44,16 +45,23 @@ header, .tableInfo {
 	color: white;
 }
 
+main {
+	margin-top: 15%;
+	margin-left: 1%;
+}
+
 
 .layout, .tables {
 	width: 100%;
 	height: 100%;
-	display: flex;
-	justify-content: flex-start;
 }
 
 .layout {
 	margin: 50px;
+}
+
+.wrapper {
+	display: inline-block;
 }
 
 .table {

@@ -18,19 +18,19 @@ function changeIt(event) {
 	if (status == 'false') event.srcElement.dataset.status = 'true';
 	else event.srcElement.dataset.status = 'false';
 }
-
+let count = 1;
 function createTableName() {
 	var tableNames = document.querySelector('.tableNames');
-	var childNodes = tableNames.childNodes;
-	var len = childNodes.length;
-	console.log(childNodes);
+
 	var tableName = document.createElement('div');
 	tableName.className = 'tableName';
 
 	var counterH3 = document.createElement('label');
-	counterH3.innerHTML = 1 + ') ';
+	counterH3.innerHTML = count + ')';
+	count+=1;
 	var nameH3 = document.createElement('input');
 	nameH3.placeholder = 'Write table name';
+	nameH3.name = 'tableNames';
 
 	tableName.appendChild(counterH3);
 	tableName.appendChild(nameH3);
@@ -47,3 +47,4 @@ function validBtnCreate(event) {
   	else btnCreate.dataset.color = 'green';
 }
 
+createTableName();
