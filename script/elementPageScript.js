@@ -8,6 +8,9 @@ for (let i = 0; i < addTaskBtns.length; i++) {
 	addTaskBtns[i].addEventListener('click', addTask);
 }
 
+let private = document.querySelector('.private');
+private.addEventListener('click', (event) => event.target.dataset.status = event.target.dataset.status ? undefined:'on');
+
 function addTask(event) {
 	var tableChild = event.target.parentNode;
 	var tasks = tableChild.childNodes[3];

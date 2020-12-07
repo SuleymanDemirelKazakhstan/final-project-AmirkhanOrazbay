@@ -17,7 +17,11 @@ header, .tableInfo {
 	width: 100%;
 }
 
-.tableInfo .on {
+.private{
+	color: gray
+}
+
+.private[data-status='on'] {
 	color: green;
 }
 
@@ -39,6 +43,7 @@ header, .tableInfo {
 	font-size: 32px;
 	color: white;
 	top:75px;
+	cursor: pointer;
 }
 
 .tableInfo .afa {
