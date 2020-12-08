@@ -37,7 +37,6 @@ main .wrapCenter {
 	font-size: 24px;
 }
 
-
 .info {
 	display: flex;
 	align-items: center;
@@ -45,11 +44,22 @@ main .wrapCenter {
 	margin: 15px;
 }
 
+.tables {
+	font-weight: bold;
+	font-size: 24px;
+}
+
 .card {
 	background-color: #b8de6f;
 	border-radius: 15px;
 	margin: 15px;
 	padding: 15px;
+	cursor: pointer;
+}
+
+.tableNames {
+	max-height: 100px;
+	overflow-y: scroll;
 }
 
 .tableName, .btnAddTable {
@@ -89,14 +99,14 @@ main .wrapCenter {
 .btnCreate[data-color='gray'] input {
 	background-color: gray;
 	cursor: default;
-	pointer-events: none;        
+	pointer-events: none;
 	text-decoration: none;
 }
 
 .btnCreate[data-color='green'] input {
 	background-color: green;
 	cursor: default;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 .btnCreate a{
