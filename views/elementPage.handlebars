@@ -2,8 +2,8 @@
     <a href="/html/listPage" class="afa">
         <i style="font-size:24px" class="fa">&#xf0a8;</i>
     </a>
-    <div class="name">{{name}}</div>
-    <div class="{{favorite}}"><img src="" alt="start"></div>
+    <div class="name"><input type="text" value="{{name}}"></div>
+    <div class="favorite"><img src="/file/img/star{{favorite}}.svg" alt="start" height="50px"></div>
     <div class="private" data-status="{{private}}">Private</div>
 </div>
 <main>
@@ -19,6 +19,24 @@
         {{/each}}
         <div>
             <div class="btnAddTable">+ Add Table</div>
+        </div>
+    </div>
+    <div class="overlay">
+        <div class="wrapper">
+            <div class="taskManager">
+                <div class="infoPart">
+                    <div class="title"></div>
+                    <div class="parent"></div>
+                </div>
+                <div class="description">
+                    <div>Description</div>
+                    <div class="text"><textarea placeholder="Add more information ..."></textarea></div>
+                </div>
+                <div class="btns">
+                    <div class="saveBtn"><button type="button">Save</button></div>
+                    <div class="cancelBtn"><button type="button">Cancel</button></div>
+                </div>
+            </div>
         </div>
     </div>
 </main>

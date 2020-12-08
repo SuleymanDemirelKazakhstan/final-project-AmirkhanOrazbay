@@ -1,129 +1,203 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
-
 
 header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #86EAEA;
-	top:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #86EAEA;
+    top: 0;
 }
 
-header, .tableInfo {
-	position: fixed;
-	width: 100%;
+header,
+.tableInfo {
+    position: fixed;
+    width: 100%;
 }
 
-.private{
-	color: gray
+.name input {
+    max-width: 100px;
+    padding-left: 25px;
+    font-size: 24px;
+    background-color: #35DED4;
+    color: white;
+}
+
+.private {
+    color: gray;
+    user-select: none;
 }
 
 .private[data-status='on'] {
-	color: green;
+    color: green;
 }
 
 .logo {
-	margin: 15px;
+    margin: 15px;
 }
 
 .logo img {
-	width: 200px;
+    width: 200px;
 }
 
-
 .tableInfo {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	background-color: #35DED4;
-	padding: 15px 0;
-	font-size: 32px;
-	color: white;
-	top:75px;
-	cursor: pointer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #35DED4;
+    padding: 15px 0;
+    font-size: 32px;
+    color: white;
+    top: 75px;
+    cursor: pointer;
 }
 
 .tableInfo .afa {
-	position: absolute;
-	left: 3%;
-	top: 15px;
-	cursor: default;
-	color: white;
+    position: absolute;
+    left: 3%;
+    top: 15px;
+    cursor: default;
+    color: white;
 }
 
 main {
-	margin-top: 12%;
-	margin-left: 1%;
+    margin-top: 12%;
+    margin-left: 1%;
 }
-
 
 .tables {
-	display: flex;
-	cursor: pointer;
-	width: 100%;
-	height: 100%;
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
 }
 
-
 .wrapper {
-	display: inline-block;
+    display: inline-block;
 }
 
 .table {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	border-radius: 15px;
-	background-color: #DDFFFD;
-	max-height: 500px;
-	min-width: 200px;
-	text-align: center;
-	margin-right:50px;
-	overflow: hidden;
-	border: 3px blue solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #DDFFFD;
+    max-height: 500px;
+    min-width: 200px;
+    text-align: center;
+    margin-right: 50px;
+    overflow: hidden;
+    border: 3px blue solid;
 }
 
 .table .tableName {
-	width: 75%;
-	background-color: #AEFAFF;
-	font-size: 24px;
-	padding: 15px; 
+    width: 75%;
+    background-color: #AEFAFF;
+    font-size: 24px;
+    padding: 15px;
 }
 
 .table .tasks {
-	display: flex;
-	flex-direction: column;
-	max-height: 200px;
-	overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    max-height: 300px;
+    overflow-y: scroll;
 }
 
-.table  .tasks, .table .btnAddTask {
-	width: 80%;
+.table .tasks,
+.table .btnAddTask {
+    width: 80%;
 }
 
-.table .task, .table .btnAddTask {
-	background-color: #ABFFCD;
-	font-size: 18px;
-	margin: 5px; 
-	padding: 5px;
-	border-radius: 15px;
+.table .task,
+.table .btnAddTask {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+.table .task,
+.table .btnAddTask,
+.table .task input {
+    background-color: #ABFFCD;
+    font-size: 18px;
+    cursor: pointer;
 }
 
 .table .btnAddTask {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .btnAddTable {
-	background-color: #DDFFFD;
-	text-align: center;
-	height: 30px;
-	font-size: 24px;
-	padding: 15px;
-	border: 3px blue solid; 
-	font-weight: bold;
-	border-radius: 15px;
-	min-width: max-content;
+    background-color: #DDFFFD;
+    text-align: center;
+    height: 30px;
+    font-size: 24px;
+    padding: 15px;
+    border: 3px blue solid;
+    font-weight: bold;
+    border-radius: 15px;
+    min-width: max-content;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.overlay .wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay .taskManager {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 60%;
+    background-color: rgb(244, 245, 247);
+}
+
+.taskManager .infoPart {
+    width: 90%;
+    height: 10%;
+    align-self: center;
+    margin: 25px;
+}
+
+.infoPart .title {
+    font-size: 24px;
+}
+
+.taskManager .description {
+    width: 90%;
+    height: 30%;
+    align-self: center;
+    /* margin: 15px; */
+}
+
+.taskManager .description textarea {
+    background-color: rgb(234, 236, 240);
+    resize: none;
+    width: 70%;
+    height: 100px;
+}
+
+.taskManager .btns {
+    width: 90%;
+    height: 30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: flex-end;
 }
