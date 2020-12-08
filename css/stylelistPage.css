@@ -75,8 +75,14 @@ main {
 	border: 3px #f39233 solid;
 	border-radius: 15px;
 	background-color: #f1e189;
-	font-size: 24px;
 	font-family: 'Grandstander', cursive;
+	font-size: 24px;
+}
+
+.rightPart button{
+	background-color: #f1e189;
+	font-family: 'Grandstander', cursive;
+	font-size: 24px;
 }
 
 .rightPart a {

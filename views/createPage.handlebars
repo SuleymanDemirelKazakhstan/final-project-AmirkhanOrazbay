@@ -1,0 +1,40 @@
+<main>
+    <form action="/html/elementPage">
+        <div class="wrapCenter">
+            <div class="form">
+                <div class="info card">
+                    <h1>Name : </h1>
+                    <div class="nameInput">
+                        <input type="text" placeholder="Name" name="name">
+                    </div>
+                </div>
+                <div class="tables card">
+                    <div>Table List : </div>
+                    <div class="tableNames"></div>
+                    <div class="btnAddTable">
+                        <div>+ Add table name</div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div id="private" class="info">
+                        <h1>Private : </h1>
+                        <div class="checkbox" data-status='false'>
+                            <input type="checkbox" name="private">
+                        </div>
+                    </div>
+                    <div id="favourite" class="info">
+                        <h1>Favourite : </h1>
+                        <div class="checkbox" data-status='false'>
+                            <input type="checkbox" name="favourite">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrapCenter">
+            <div class="btnCreate" data-color="gray">
+                <input type="submit" value="Create">
+            </div>
+        </div>
+    </form>
+</main>

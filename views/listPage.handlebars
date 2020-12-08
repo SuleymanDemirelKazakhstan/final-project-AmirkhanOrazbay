@@ -1,0 +1,27 @@
+<main>
+    <div class="leftPart menu">
+        <div class="item">
+            <h1><a href="listPage?page=Personal Tables">Tables</a></h1>
+        </div>
+        <div class="item">
+            <h1> <a href="listPage?page=To-Do List">To-Do List</a></h1>
+        </div>
+        <div class="item">
+            <h1><a href="listPage?page=Favorite">Favorite</a></h1>
+        </div>
+    </div>
+    <div class="rightPart">
+        <div class="info">
+            <img src="/file/img/person.svg">
+            <h1>{{page}}</h1>
+        </div>
+        <div class="tables">
+            {{#each tables}}
+                <form action="elementPage?table={{this}}" method="POST">
+                    <div class="table"><button type="submit">{{this}}</button></div>
+                </form>
+            {{/each}}
+            <div class="btnAddTable"><a href="createPage"> + Create</a></div>
+        </div>
+    </div>
+</main>
