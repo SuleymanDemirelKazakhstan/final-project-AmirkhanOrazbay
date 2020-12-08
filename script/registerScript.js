@@ -16,8 +16,8 @@ function validBtnCreate() {
 	var emailValLen= email.value.length;
 	var nameValLen = name.value.length;
 	var passwordValLen = password.value.length;
-	if (emailValLen == 0 || nameValLen == 0 || passwordValLen == 0) 
+	if (emailValLen == 0 || nameValLen == 0 || passwordValLen == 0)
 		btnSignUp.dataset.color = 'gray';
-  	else 
+  	else
   		btnSignUp.dataset.color = 'blue';
 }

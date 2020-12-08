@@ -8,20 +8,20 @@
 	<link rel="icon" href="../img/favicon.ico">
 </head>
 <body>
-	<div class="regForm">
+	<form action="../html/listPage" method="POST" class="regForm">
 		<h1>Sign up for your account</h1>
 		<div class="input">
-			<input id="email" type="text" placeholder="Enter email" required>
+			<input id="email" type="text" placeholder="Enter email" name="email" required>
 		</div>
 		<div class="input">
-			<input id="name" type="text" placeholder="Enter full name" required>
+			<input id="name" type="text" placeholder="Enter full name" name="name" required>
 		</div>
 		<div class="input">
-			<input id="password" type="password" placeholder="Create password" required>
+			<input id="password" type="password" placeholder="Create password" name="password" required>
 		</div>
-		<div class="signUpBtn" data-color="gray"><a href="../html/listPage.html">Sign Up</a></div>
+		<div class="signUpBtn" data-color="gray"><button>Sign Up</button></div>
 		<hr>
-	</div>
+	</form>
 	<div class="background">
 		<img id="left" src="../img/hero.gif">
 		<img id="right" src="../img/edu.gif">
