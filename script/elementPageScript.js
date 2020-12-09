@@ -1,31 +1,28 @@
+let tableArray = [];
+
+var Table = (function() {
+
+    var Table = function(settings) {
+        this.title = settings.title;
+        this.tasks = settings.tasks;
+    };
+
+    return Table;
+})();
 let tables = document.querySelectorAll('.table');
 
 let addTableBtn = document.querySelector('.btnAddTable');
-addTableBtn.addEventListener('click', createTable);
+addTableBtn.addEventListener('click', () => document.querySelector('.submitTable').style.display = 'block');
 
 let addTaskBtns = document.querySelectorAll('.btnAddTask');
 for (let i = 0; i < addTaskBtns.length; i++) {
-    addTaskBtns[i].addEventListener('click', addTask);
+    addTaskBtns[i].addEventListener('click', (event) => event.target.parentNode.childNodes[5].style.display = 'block');
 }
 
 let private = document.querySelector('.private');
 private.addEventListener('click', (event) => {
     event.target.dataset.status = event.target.dataset.status ? "" : "on";
 });
-
-let task = document.querySelectorAll('.task');
-task.forEach(element => element.addEventListener('click', taskManager));
-
-let saveBtn = document.querySelector('.saveBtn');
-saveBtn.addEventListener('click', saveTask);
-
-let last;
-let closeTaskManager = () => {
-    document.querySelector('.overlay').style.display = 'none';
-    document.querySelector('.text').childNodes[0].value = '';
-}
-let cancelBtn = document.querySelector('.cancelBtn');
-cancelBtn.addEventListener('click', closeTaskManager);
 
 let favorite = document.querySelector('.favorite');
 favorite.addEventListener('click', (event) => {
@@ -36,19 +33,48 @@ favorite.addEventListener('click', (event) => {
     event.target.src = src + '.svg';
 });
 
+let task = document.querySelectorAll('.task');
+task.forEach(element => element.addEventListener('click', taskManager));
+
+let saveBtn = document.querySelectorAll('.saveBtn');
+for (var i = 0; i < saveBtn.length - 2; i++) {
+    saveBtn[i].addEventListener('click', addTask);
+}
+saveBtn[saveBtn.length - 2].addEventListener('click', createTable);
+saveBtn[saveBtn.length - 1].addEventListener('click', saveTask);
+
+
+let last;
+let closeTask = (event) => {
+    event.target.parentNode.parentNode.parentNode.style.display = 'none';
+    event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[0].value = '';
+}
+let closeSubmit = () => {
+    document.querySelector('.submitTable').style.display = 'none';
+    document.querySelector('#name').childNodes[0].value = '';
+}
+let closeTaskManager = () => {
+    document.querySelector('.overlay').style.display = 'none';
+    document.querySelector('.text').childNodes[0].value = '';
+}
+let cancelBtn = document.querySelectorAll('.cancelBtn');
+for (var i = 0; i < cancelBtn.length - 2; i++) {
+    cancelBtn[i].addEventListener('click', closeTask);
+}
+cancelBtn[cancelBtn.length - 2].addEventListener('click', closeSubmit);
+cancelBtn[cancelBtn.length - 1].addEventListener('click', closeTaskManager);
 
 function addTask(event) {
-    var tableChild = event.target.parentNode;
-    var tasks = tableChild.childNodes[3];
-    if (!tasks) tasks = tableChild.childNodes[1];
+    var tasks = event.target.parentNode.parentNode.parentNode.parentNode.childNodes[3];
     var taskDiv = document.createElement('div');
     var taskInput = document.createElement('input');
+    taskInput.value = event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[0].value;
     taskDiv.className = 'task';
     taskDiv.appendChild(taskInput);
     tasks.appendChild(taskDiv);
-    taskInput.focus();
     task = document.querySelectorAll('.task');
     task.forEach(element => element.addEventListener('click', taskManager));
+    event.target.parentNode.parentNode.parentNode.childNodes[1].childNodes[0].value = '';
 }
 
 function saveTask() {
@@ -67,7 +93,7 @@ function createTable() {
 
     var tableName = document.createElement('input');
     tableName.type = 'text';
-    tableName.innerHTML = 'Table name';
+    tableName.value = document.querySelector('#name').childNodes[0].value;
     tableName.className = 'tableName';
     tableDiv.appendChild(tableName);
 
@@ -81,9 +107,9 @@ function createTable() {
     tableDiv.appendChild(addBtn);
 
     wrap.appendChild(tableDiv);
-    document.querySelector('.tables').insertBefore(wrap, addTableBtn.parentNode);
-    tableName.focus();
+    document.querySelector('.tables').insertBefore(wrap, document.querySelector('.submitTable').parentNode);
     load();
+    closeSubmit();
 }
 
 function taskManager(event) {

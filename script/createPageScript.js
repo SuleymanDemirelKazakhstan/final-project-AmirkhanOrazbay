@@ -1,3 +1,5 @@
+let count = 1;
+
 let btnAddTableName = document.querySelector('.btnAddTable');
 btnAddTableName.addEventListener('click', createTableName);
 
@@ -10,32 +12,33 @@ input.addEventListener('keypress', validBtnCreate);
 
 let private = document.querySelector('#private .checkbox');
 private.addEventListener('click', changeIt);
-let favourite = document.querySelector('#favourite .checkbox');
+let favourite = document.querySelector('#favorite .checkbox');
 favourite.addEventListener('click', changeIt);
 
 function changeIt(event) {
-	var status = event.srcElement.dataset.status;
-	if (status == 'false') event.srcElement.dataset.status = 'true';
-	else event.srcElement.dataset.status = 'false';
+    var status = event.srcElement.dataset.status;
+    if (status == 'false') event.srcElement.dataset.status = 'true';
+    else event.srcElement.dataset.status = 'false';
 }
-let count = 1;
+
+
 function createTableName() {
-	var tableNames = document.querySelector('.tableNames');
+    var tableNames = document.querySelector('.tableNames');
 
-	var tableName = document.createElement('div');
-	tableName.className = 'tableName';
+    var tableName = document.createElement('div');
+    tableName.className = 'tableName';
 
-	var counterH3 = document.createElement('label');
-	counterH3.innerHTML = count + ')';
-	count+=1;
-	var nameH3 = document.createElement('input');
-	nameH3.placeholder = 'Write table name';
-	nameH3.name = 'tableNames';
+    var counterH3 = document.createElement('label');
+    counterH3.innerHTML = count + ')';
+    count += 1;
+    var nameH3 = document.createElement('input');
+    nameH3.placeholder = 'Write table name';
+    nameH3.name = 'tableNames';
 
-	tableName.appendChild(counterH3);
-	tableName.appendChild(nameH3);
+    tableName.appendChild(counterH3);
+    tableName.appendChild(nameH3);
 
-	tableNames.appendChild(tableName);
+    tableNames.appendChild(tableName);
 }
 
 // function createTable() {
@@ -43,8 +46,8 @@ function createTableName() {
 // }
 
 function validBtnCreate(event) {
-	if (input.value.length == 0) btnCreate.dataset.color = 'gray';
-  	else btnCreate.dataset.color = 'green';
+    if (input.value.length == 0) btnCreate.dataset.color = 'gray';
+    else btnCreate.dataset.color = 'green';
 }
 
 createTableName();

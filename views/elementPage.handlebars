@@ -13,10 +13,26 @@
             <div class="table">
                 <input type="text" class="tableName" value="{{this}}">
                 <div class="tasks"></div>
+                <div class="submitTask">
+                    <div id="name"><input type="text" class="tableName"></div>
+                    <div class="btns">
+                        <div class="saveBtn"><button type="button">Save</button></div>
+                        <div class="cancelBtn"><button type="button">Cancel</button></div>
+                    </div>
+                </div>
                 <div class="btnAddTask">+ Add Task</div>
             </div>
         </div>
         {{/each}}
+        <div class="wrapper">
+            <div class="submitTable table">
+                <div id="name"><input type="text" class="tableName"></div>
+                <div class="btns">
+                    <div class="saveBtn"><button type="button">Save</button></div>
+                    <div class="cancelBtn"><button type="button">Cancel</button></div>
+                </div>
+            </div>
+        </div>
         <div>
             <div class="btnAddTable">+ Add Table</div>
         </div>
