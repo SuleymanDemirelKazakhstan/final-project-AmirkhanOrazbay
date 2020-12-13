@@ -13,11 +13,11 @@ password.addEventListener('keypress', validBtnCreate);
 let btnSignUp = document.querySelector('.signUpBtn');
 
 function validBtnCreate() {
-	var emailValLen= email.value.length;
-	var nameValLen = name.value.length;
-	var passwordValLen = password.value.length;
-	if (emailValLen == 0 || nameValLen == 0 || passwordValLen == 0)
-		btnSignUp.dataset.color = 'gray';
-  	else
-  		btnSignUp.dataset.color = 'blue';
+    var emailValLen = email.value.length;
+    var nameValLen = name.value.length;
+    var passwordValLen = password.value.length;
+    if (emailValLen == 0 || nameValLen == 0 || passwordValLen == 0)
+        btnSignUp.dataset.color = 'gray';
+    else
+        btnSignUp.dataset.color = 'blue';
 }

@@ -1,14 +1,15 @@
-<form action="../html/listPage" method="POST" class="regForm">
+<form action="/{{auth}}" method="POST" class="regForm">
     <h1>Sign up for your account</h1>
     <div class="input">
-        <input id="email" type="text" placeholder="Enter email" name="email" required>
+        <input id="email" type="email" placeholder="Enter email" name="email" value="{{email}}" required>
     </div>
-    <div class="input">
-        <input id="name" type="text" placeholder="Enter full name" name="name" required>
+    <div class="input" style="display: {{display}};">
+        <input id="name" type="text" placeholder="Enter full name" name="name" value="{{display}}" required>
     </div>
     <div class="input">
         <input id="password" type="password" placeholder="Create password" name="password" required>
     </div>
+    <div class="error" data-error="{{status}}">Login or password are incorrect</div>
     <div class="signUpBtn" data-color="gray"><button>Sign Up</button></div>
     <hr>
 </form>

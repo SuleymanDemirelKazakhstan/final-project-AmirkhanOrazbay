@@ -1,7 +1,11 @@
-const MongoClient = require('mongodb').MongoClient;
-const urlToDataBase = "mongodb+srv://realsleep:1P0G3xBgoTqCHwzL@cluster0.y6deu.mongodb.net/sample_airbnb?retryWrites=true&w=majority";
+const { create } = require('express-handlebars');
+const { use } = require('./login');
 
-async function useCollection(dataBaseName, collectionName) {
+const MongoClient = require('mongodb').MongoClient;
+const ObjectId = require('mongodb').ObjectID
+const urlToDataBase = "mongodb+srv://realsleep:qwerty159@cluster0.y6deu.mongodb.net/tbt?retryWrites=true&w=majority";
+// addUser({ email: 'amir', name: 'amir', password: 'amie' });
+async function getCollection(dataBaseName, collectionName) {
     // connect to your cluster
     const client = await MongoClient.connect(urlToDataBase, {
         useNewUrlParser: true,
@@ -10,43 +14,94 @@ async function useCollection(dataBaseName, collectionName) {
     // specify the DB's name
     const db = client.db(dataBaseName);
     // execute find query
-    const items = await db.collection(collectionName).find({ _id: "10006546" }).toArray();
-    console.log(items);
+    const items = await db.collection(collectionName);
     // close connection
-    client.close();
+    // client.close();
     return items;
 }
-async function isItUser(username, password) {
-    const users = useCollection('tbt', 'users');
-    let bool = false;
-    await users.then(el => {
-        const user = el.find(element => element.login === username && element.password === password);
-        bool = user;
-    });
-    return bool;
+async function isUser(userInfo) {
+    userInfo.password = await hashIt(userInfo.email, userInfo.password);
+    delete userInfo.name;
+    let collection = await getCollection('tbt', 'users');
+    let user = collection.findOne(userInfo);
+    return user;
 }
 
-async function getTables(username) {
-    const grades = useCollection('tbt','tables');
-    let info = {};
-    await grades.then(el => {
-        const user = el.find(element => element.name === username);
-        info = user;
-    });
-    return info;
+// getBoard('ba', '5fd5e8af1374940824ec7b99');
+async function getBoard(username, id) {
+    let objID = new ObjectId(id);
+    let collection = await getCollection('tbt', 'board');
+    let result = await collection.findOne({ _id: objID });
+    let tables = result.table;
+    let board = {
+        name: result.name,
+        private: result.private,
+        favorite: result.favorite,
+        table: []
+    };
+    for (let i = 0; i < tables.length; i++) {
+        let table = await getTable(username, tables[i]);
+        board.table.push(table);
+    }
+    return board;
 }
 
-async function getTable(username) {
-    const time = useCollection('tbt', 'table');
-    let info = {};
-    await time.then(el => {
-        const user = el.find(element => element.name === username);
-        info = user;
-    });
-    return info;
+async function getTable(username, id) {
+    let objID = new ObjectId(id);
+    let collection = await getCollection('tbt', 'table');
+    let result = await collection.findOne({ _id: objID });
+    return result;
 }
 
-function hashIt(login, password) {
+async function addUser(user) {
+    let collection = await getCollection('tbt', 'users');
+    user.password = await hashIt(user.email, user.password);
+    let result = await collection.insertOne(user);
+    let document = result.ops[0];
+    return document;
+}
+
+async function createBoard(username, body) {
+    let tableNames = body.tableNames;
+    let newBoard = {
+        username: username,
+        name: body.name,
+        private: body.private,
+        favorite: body.favorite,
+        table: []
+    };
+    if (typeof tableNames === 'string') {
+        let id = await createTable(username, tableNames);
+        newBoard.table.push(new ObjectId(id));
+    } else {
+        for (let i = 0; i < tableNames.length; i++) {
+            let id = await createTable(username, tableNames[i]);
+            console.log(id);
+            newBoard.table.push(new ObjectId(id));
+        }
+    }
+    let collection = await getCollection('tbt', 'board');
+    let result = await collection.insertOne(newBoard);
+    let document = result.ops[0];
+    return document._id;
+}
+
+async function createTable(username, name) {
+    if (!name) return;
+    let newTable = {
+        username: username,
+        name: name,
+        task: []
+    };
+    let collection = await getCollection('tbt', 'table');
+    let result = await collection.insertOne(newTable);
+    let document = result.ops[0];
+    return document._id;
+}
+
+async function hashIt(login, password) {
+    // console.log(login);
+    // console.log(password);
     if (!password) return undefined;
     let newPwd = '';
     for (let index = 0; index < password.length; index++) {
@@ -57,8 +112,11 @@ function hashIt(login, password) {
     return newPwd;
 }
 
-module.exports.useCollection = useCollection;
+module.exports.getCollection = getCollection;
 module.exports.hashIt = hashIt;
-module.exports.isItUser = isItUser;
+module.exports.isUser = isUser;
 module.exports.getTable = getTable;
-module.exports.getTables = getTables;
+module.exports.getBoard = getBoard;
+module.exports.addUser = addUser;
+module.exports.createBoard = createBoard;
+module.exports.createTable = createTable;

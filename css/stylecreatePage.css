@@ -1,129 +1,130 @@
 * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #01c5c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #01c5c4;
 }
 
 .logo {
-	margin: 15px;
+    margin: 15px;
 }
 
 .logo img {
-	width: 200px;
+    width: 200px;
 }
 
 main .wrapCenter {
-	display: flex;
-	justify-content: center;
-	margin: 5px 50px;
-	font-family: 'Grandstander', cursive;
+    display: flex;
+    justify-content: center;
+    margin: 5px 50px;
+    font-family: 'Grandstander', cursive;
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
-	background-color: #01c5c4;
-	border-radius: 15px;
-	color: #006884;
+    display: flex;
+    flex-direction: column;
+    background-color: #01c5c4;
+    border-radius: 15px;
+    color: #006884;
 }
 
 .form input {
-	font-size: 24px;
+    font-size: 24px;
 }
 
 .info {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
 }
 
 .tables {
-	font-weight: bold;
-	font-size: 24px;
+    font-weight: bold;
+    font-size: 24px;
 }
 
 .card {
-	background-color: #b8de6f;
-	border-radius: 15px;
-	margin: 15px;
-	padding: 15px;
-	cursor: pointer;
+    background-color: #b8de6f;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 15px;
+    cursor: pointer;
 }
 
 .tableNames {
-	max-height: 100px;
-	overflow-y: scroll;
+    max-height: 100px;
+    overflow-y: auto;
 }
 
-.tableName, .btnAddTable {
-	background-color: #f1e189;
-	padding: 10px;
-	margin: 5px;
-	border: 3px #f39233 solid;
-	border-radius: 15px;
+.tableName,
+.btnAddTable {
+    background-color: #f1e189;
+    padding: 10px;
+    margin: 5px;
+    border: 3px #f39233 solid;
+    border-radius: 15px;
 }
 
 .tableName label {
-	font-size: 24px;
+    font-size: 24px;
 }
 
 .tableName input {
-	background-color: #f1e189;
-	color: #006884;
+    background-color: #f1e189;
+    color: #006884;
 }
 
 .btnAddTable {
-	text-align: center;
+    text-align: center;
 }
 
 .nameInput {
-	background-color: white;
-	margin-left: 20px;
-	border-radius: 10px;
-	padding: 5px;
+    background-color: white;
+    margin-left: 20px;
+    border-radius: 10px;
+    padding: 5px;
 }
 
 .btnCreate input {
-	padding: 5px 15px;
-	border-radius: 15px;
-	font-size: 28px;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 28px;
 }
 
 .btnCreate[data-color='gray'] input {
-	background-color: gray;
-	cursor: default;
-	pointer-events: none;
-	text-decoration: none;
+    background-color: gray;
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
 }
 
 .btnCreate[data-color='green'] input {
-	background-color: green;
-	cursor: default;
+    background-color: green;
+    cursor: default;
     pointer-events: auto;
 }
 
-.btnCreate a{
-	text-decoration: none;
-	color: white;
+.btnCreate a {
+    text-decoration: none;
+    color: white;
 }
 
 .checkbox {
-	width: 25px;
-	height: 25px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.checkbox input  {
-	display: block;
-	width: 25px;
-	height: 25px;
+.checkbox input {
+    display: block;
+    width: 25px;
+    height: 25px;
 }

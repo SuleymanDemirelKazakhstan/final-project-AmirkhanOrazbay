@@ -1,53 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Tables by tasks</title>
-	<link rel="stylesheet" href="file/css/nullify.css">
-	<link rel="stylesheet" type="text/css" href="file/css/style.css">
-	<link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
-	<link rel="icon" href="file/img/favicon.ico">
-</head>
-<body>
-	<div class="page">
-		<header>
-			<div class="logo"><img src="file/img/logo.svg"></div>
-			<div class="btnStartWork"><a class="linkStartWork" href="../html/createPage">Start Work</a></div>
-		</header>
 
-		<main>
-			<div class="intro">
-				<div class="leftPart">
-					<div class="text">
-						<h1>Increase your productivity with TBT</h1>
-						<p>TBT's tables helps your to organize you work process</p>
-					</div>
-					<div class="signUpForm">
-						<div class="inputForm">
-							<input type="text" name="email" autocomplete="off" required>
-							<label for="email" class="labelEmail">
+<head>
+    <title>Tables by tasks</title>
+    <link rel="stylesheet" href="file/css/nullify.css">
+    <link rel="stylesheet" type="text/css" href="file/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Slim&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link rel="icon" href="file/img/favicon.ico">
+</head>
+
+<body>
+    <div class="page">
+        <header>
+            <div class="logo"><img src="file/img/logo.svg"></div>
+            <div class="btnStartWork"><a class="linkStartWork" href="/login">Log in</a></div>
+            <div class="btnStartWork"><a class="linkStartWork" href="/create">Start Work</a></div>
+        </header>
+
+        <main>
+            <div class="intro">
+                <div class="leftPart">
+                    <div class="text">
+                        <h1>Increase your productivity with TBT</h1>
+                        <p>TBT's tables helps your to organize you work process</p>
+                    </div>
+                    <div class="signUpForm">
+                        <form action="/register" method="GET">
+                            <div class="inputForm">
+                                <input type="email" name="email" autocomplete="off" required>
+                                <label for="email" class="labelEmail">
 								<span class="spanEmail">Email</span>
 							</label>
-						</div>
-						<div class="btnSignUp"><a class="linkSignUp" href="../html/register">Sign Up</a></div>
-					</div>
-				</div>
-				<div class="rightPart">
-					<div class="image">
-						<img src="file/img/productivity.png">
-					</div>
-				</div>
-			</div>
-			<div class="cards"></div>
-		</main>
+                            </div>
+                            <div class="btnSignUp"><button class="linkSignUp" type="submit">Sign Up</button></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="rightPart">
+                    <div class="image">
+                        <img src="file/img/productivity.png">
+                    </div>
+                </div>
+            </div>
+            <div class="cards"></div>
+        </main>
 
-		<footer>
-			<div class="copyRight">
-				© Copyright 2020. All rights reserved.
-			</div>
-		</footer>
+        <footer>
+            <div class="copyRight">
+                © Copyright 2020. All rights reserved.
+            </div>
+        </footer>
 
-		<script src="file/script/app.js"></script>
-	</div>
+        <script src="file/script/app.js"></script>
+    </div>
 </body>
+
 </html>

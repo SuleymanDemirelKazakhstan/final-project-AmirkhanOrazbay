@@ -1,90 +1,92 @@
 * {
-	margin : 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	background-color: #01c5c4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #01c5c4;
 }
 
 .logo {
-	margin: 15px;
+    margin: 15px;
 }
 
 .logo img {
-	width: 200px;
+    width: 200px;
 }
 
 main {
-	display: flex;
-	text-align: center;
-	margin: 50px;
+    display: flex;
+    text-align: center;
+    align-items: flex-start;
+    margin: 50px;
 }
 
-.rightPart, .leftPart {
-	display: inline-block;
+.rightPart,
+.leftPart {
+    display: inline-block;
 }
 
 .leftPart {
-	margin-left: 5%;
-	margin-right: 20%;
-	border-radius: 15px;
+    margin-left: 5%;
+    margin-right: 20%;
+    border-radius: 15px;
 }
 
 .menu {
-	background-color: #4a69bb;
-	padding: 10px;
-	color : #617be3;
-	height: 170px;
+    background-color: #4a69bb;
+    padding: 10px;
+    color: #617be3;
 }
 
 .item {
-	background-color: #9aceff;
-	border-radius: 15px;
-	margin: 15px;
-	padding: 5px 15px;
+    background-color: #9aceff;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 5px 15px;
 }
 
 .rightPart {
-	border : 1px black solid;
-	width: 700px;
-	height: 400px;
+    border: 1px black solid;
+    width: 700px;
+    height: 400px;
 }
 
 .rightPart .info {
-	display: flex;
-	margin: 15px 50px;
+    display: flex;
+    margin: 15px 50px;
 }
 
-.rightPart .info h1{
-	margin-left: 30px;
+.rightPart .info h1 {
+    margin-left: 30px;
 }
 
-.rightPart .tables{
-	display: flex;
+.rightPart .tables {
+    display: flex;
 }
 
-.rightPart .table, .rightPart .btnAddTable{
-	width: 100px;
-	height: 25px;
-	padding: 15px 10px 10px;
-	margin: 5px;
-	border: 3px #f39233 solid;
-	border-radius: 15px;
-	background-color: #f1e189;
-	font-family: 'Grandstander', cursive;
-	font-size: 24px;
+.rightPart .table,
+.rightPart .btnAddTable {
+    width: 100px;
+    height: 25px;
+    padding: 15px 10px 10px;
+    margin: 5px;
+    border: 3px #f39233 solid;
+    border-radius: 15px;
+    background-color: #f1e189;
+    font-family: 'Grandstander', cursive;
+    font-size: 24px;
 }
 
-.rightPart button{
-	background-color: #f1e189;
-	font-family: 'Grandstander', cursive;
-	font-size: 24px;
+.rightPart button {
+    background-color: #f1e189;
+    font-family: 'Grandstander', cursive;
+    font-size: 24px;
 }
 
 .rightPart a {
-		color: black;
+    color: black;
 }
