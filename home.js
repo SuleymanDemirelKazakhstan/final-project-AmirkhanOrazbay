@@ -1,4 +1,4 @@
-const path = require('path');
+const data = require('./data.js');
 const express = require('express');
 
 const router = express.Router();
@@ -9,8 +9,14 @@ router.use(function(req, res, next) {
     next();
 });
 
-router.get('/', (req, res) => {
-    res.render('listPage', { css: 'listPage' });
+router.get('/', async(req, res) => {
+    let page = req.query.page;
+    let collection = await data.getCollection('tbt', 'board');
+    let info = { username: req.session.user.name };
+    if (page === 'Favorite') info.favorite = "on";
+    let result = await collection.find(info).toArray();
+    console.log(result);
+    res.render('listPage', { css: 'listPage', tables: result });
 });
 
 module.exports = router;

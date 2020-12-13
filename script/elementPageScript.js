@@ -104,7 +104,8 @@ function addTask(event) {
     createTask(task, idTable, tableArray[parseInt(idTable)].tasks.length);
     input.value = '';
     tableArray[parseInt(idTable)].tasks.push(task);
-    localStorage.setItem('tables', JSON.stringify(tableArray));
+    let board = document.querySelector('.tables');
+    localStorage.setItem('tables' + board.id, JSON.stringify(tableArray));
     init();
 }
 
@@ -133,7 +134,8 @@ function addTable(event) {
     createTable(newTable, tableArray.length);
     input.value = '';
     tableArray.push(newTable);
-    localStorage.setItem('tables', JSON.stringify(tableArray));
+    let board = document.querySelector('.tables');
+    localStorage.setItem('tables' + board.id, JSON.stringify(tableArray));
     init();
     console.log(addTableBtn.childNodes);
     addTableBtn.childNodes[0].focus();
@@ -233,7 +235,8 @@ function saveTask() {
     let taskID = elementID.substring(elementID.indexOf('_') + 1);
     tableArray[tableID].setDescription(taskID, text);
     closeTaskManager();
-    localStorage.setItem('tables', JSON.stringify(tableArray));
+    let board = document.querySelector('.tables');
+    localStorage.setItem('tables' + board.id, JSON.stringify(tableArray));
 }
 
 function load() {
@@ -242,7 +245,8 @@ function load() {
         tasksDiv.removeChild(tasksDiv.firstChild);
     }
     tableArray = [];
-    let arr = JSON.parse(localStorage.getItem('tables'));
+    let board = document.querySelector('.tables');
+    let arr = JSON.parse(localStorage.getItem('tables' + board.id));
     if (arr) {
         let id = 0;
         arr.forEach(element => {

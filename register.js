@@ -15,9 +15,15 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', async(req, res) => {
-    let newUser = await data.addUser(req.body);
-    await email.sendMailTo(newUser);
-    res.send('<h1>Check you email</h1>');
+    let user = await data.isUser(req.body);
+    if (user) {
+        res.redirect('/login');
+    } else {
+        let newUser = await data.addUser(req.body);
+        await email.sendMailTo(newUser);
+        res.send('<h1>Check you email</h1>');
+    }
+
 });
 
 module.exports = router;

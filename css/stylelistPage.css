@@ -66,6 +66,7 @@ main {
 
 .rightPart .tables {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .rightPart .table,

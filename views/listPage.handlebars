@@ -17,8 +17,8 @@
         </div>
         <div class="tables">
             {{#each tables}}
-                <form action="elementPage?table={{this}}" method="POST">
-                    <div class="table"><button type="submit">{{this}}</button></div>
+                <form action="/tables/{{this._id}}" method="GET">
+                    <div class="table"><button type="submit">{{this.name}}</button></div>
                 </form>
             {{/each}}
             <div class="btnAddTable"><a href="create"> + Create</a></div>
