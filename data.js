@@ -34,6 +34,7 @@ async function getBoard(username, id) {
     let result = await collection.findOne({ _id: objID });
     let tables = result.table;
     let board = {
+        id: result._id,
         name: result.name,
         private: result.private,
         favorite: result.favorite,

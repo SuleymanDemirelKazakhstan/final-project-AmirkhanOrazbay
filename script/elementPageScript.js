@@ -130,20 +130,6 @@ function addTable(event) {
         return;
     }
     let newTable = new Table({ title: tableName, tasks: [], id: tableArray.length });
-    // fetch('http://localhost:8080/tables/5fd5ff802669281b9c1a2619', {
-    //         method: 'put',
-    //         headers: {
-    //             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-    //         },
-    //         body: 'foo=bar&lorem=ipsum'
-    //     })
-    //     .then(json)
-    //     .then(function(data) {
-    //         console.log('Request succeeded with JSON response', data);
-    //     })
-    //     .catch(function(error) {
-    //         console.log('Request failed', error);
-    //     });
     createTable(newTable, tableArray.length);
     input.value = '';
     tableArray.push(newTable);
@@ -154,24 +140,6 @@ function addTable(event) {
 }
 
 function createTable(table, id) {
-    let table = `<div class="wrapper">
-                    <div class="table" id="{{this._id}}">
-                        <input type="text" class="tableName" value="{{this.name}}">
-                        <div class="tasks">
-                            {{!-- {{#each task}} --}}
-
-                            {{!-- {{/each}} --}}
-                        </div>
-                        <div class="submitTask">
-                            <div id="name"><input type="text" class="tableName"></div>
-                            <div class="btns">
-                                <div class="saveBtn"><button type="button">Save</button></div>
-                                <div class="cancelBtn"><button type="button">Cancel</button></div>
-                            </div>
-                        </div>
-                        <div class="btnAddTask">+ Add Task</div>
-                    </div>
-                </div>`;
     var wrap = document.createElement('div');
     wrap.className = 'wrapper';
 
@@ -268,6 +236,26 @@ function saveTask() {
     localStorage.setItem('tables', JSON.stringify(tableArray));
 }
 
+function load() {
+    let tasksDiv = document.querySelector('.tables');
+    for (var i = 0; i < tableArray.length; i++) {
+        tasksDiv.removeChild(tasksDiv.firstChild);
+    }
+    tableArray = [];
+    let arr = JSON.parse(localStorage.getItem('tables'));
+    if (arr) {
+        let id = 0;
+        arr.forEach(element => {
+            element.id = id;
+            let table = new Table(element);
+            tableArray.push(table);
+            createTable(table, id);
+            table.renderTasks();
+            id += 1;
+        });
+    }
+    console.log(tableArray);
+}
 
 function init() {
     task = document.querySelectorAll('.task');
@@ -296,5 +284,5 @@ function init() {
         });
     }
 }
-
+load();
 init();
