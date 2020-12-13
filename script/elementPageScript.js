@@ -130,27 +130,27 @@ function addTable(event) {
         return;
     }
     let newTable = new Table({ title: tableName, tasks: [], id: tableArray.length });
-    fetch('http://localhost:8080/tables/5fd5ff802669281b9c1a2619', {
-            method: 'put',
-            headers: {
-                "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
-            },
-            body: 'foo=bar&lorem=ipsum'
-        })
-        .then(json)
-        .then(function(data) {
-            console.log('Request succeeded with JSON response', data);
-        })
-        .catch(function(error) {
-            console.log('Request failed', error);
-        });
-    // createTable(newTable, tableArray.length);
-    // input.value = '';
-    // tableArray.push(newTable);
-    // localStorage.setItem('tables', JSON.stringify(tableArray));
-    // init();
-    // console.log(addTableBtn.childNodes);
-    // addTableBtn.childNodes[0].focus();
+    // fetch('http://localhost:8080/tables/5fd5ff802669281b9c1a2619', {
+    //         method: 'put',
+    //         headers: {
+    //             "Content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+    //         },
+    //         body: 'foo=bar&lorem=ipsum'
+    //     })
+    //     .then(json)
+    //     .then(function(data) {
+    //         console.log('Request succeeded with JSON response', data);
+    //     })
+    //     .catch(function(error) {
+    //         console.log('Request failed', error);
+    //     });
+    createTable(newTable, tableArray.length);
+    input.value = '';
+    tableArray.push(newTable);
+    localStorage.setItem('tables', JSON.stringify(tableArray));
+    init();
+    console.log(addTableBtn.childNodes);
+    addTableBtn.childNodes[0].focus();
 }
 
 function createTable(table, id) {
