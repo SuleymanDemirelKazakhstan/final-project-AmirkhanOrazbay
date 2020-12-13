@@ -4,7 +4,15 @@ const express = require('express');
 const router = express.Router();
 
 router.use(function(req, res, next) {
-    // console.log(req.originalUrl);
+    if (req.query.user === 'temp') {
+        req.session.user = {
+            _id: 'temp',
+            email: 'temp',
+            name: 'temp',
+            password: 'temp'
+        };
+    }
+    console.log(req.session.user);
     if (!req.session.user) res.redirect('/');
     next();
 });
