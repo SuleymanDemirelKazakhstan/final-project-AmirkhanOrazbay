@@ -15,7 +15,6 @@ router.get('/', async(req, res) => {
     let info = { username: req.session.user.name };
     if (page === 'Favorite') info.favorite = "on";
     let result = await collection.find(info).toArray();
-    console.log(result);
     res.render('listPage', { css: 'listPage', tables: result });
 });
 

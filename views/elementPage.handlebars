@@ -3,31 +3,11 @@
         <i style="font-size:24px" class="fa">&#xf0a8;</i>
     </a>
     <div class="name"><input type="text" value="{{board.name}}"></div>
-    <div class="favorite"><img src="/file/img/star{{board.favorite}}.svg" alt="start" height="50px"></div>
+    <div class="favorite"><img src="/file/img/star{{board.favorite}}.svg" data-status="{{board.favorite}}" alt="start" height="50px"></div>
     <div class="private" data-status="{{board.private}}">Private</div>
 </div>
 <main>
     <div class="tables" id="{{board.id}}">
-        {{#each board.table}}
-        <div class="wrapper">
-            <div class="table" id="{{this._id}}">
-                <input type="text" class="tableName" value="{{this.name}}">
-                <div class="tasks">
-                    {{!-- {{#each task}} --}}
-
-                    {{!-- {{/each}} --}}
-                </div>
-                <div class="submitTask">
-                    <div id="name"><input type="text" class="tableName"></div>
-                    <div class="btns">
-                        <div class="saveBtn"><button type="button">Save</button></div>
-                        <div class="cancelBtn"><button type="button">Cancel</button></div>
-                    </div>
-                </div>
-                <div class="btnAddTask">+ Add Task</div>
-            </div>
-        </div>
-        {{/each}}
         <div class="wrapper">
             <div class="submitTable">
                 <div id="newTableName"><input type="text" class="tableName"></div>

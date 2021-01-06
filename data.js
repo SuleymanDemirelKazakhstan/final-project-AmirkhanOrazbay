@@ -77,7 +77,6 @@ async function createBoard(username, body) {
     } else {
         for (let i = 0; i < tableNames.length; i++) {
             let id = await createTable(username, tableNames[i]);
-            console.log(id);
             newBoard.table.push(new ObjectId(id));
         }
     }
@@ -100,9 +99,16 @@ async function createTable(username, name) {
     return document._id;
 }
 
+async function updateBoardName(id, name) {
+    let objID = new ObjectId(id);
+    let collection = await getCollection('tbt', 'board');
+    var board = { _id: objID };
+    var newvalues = { $set: { name: name } };
+    let response = await collection.updateOne(board, newvalues);
+    return response;
+}
+
 async function hashIt(login, password) {
-    // console.log(login);
-    // console.log(password);
     if (!password) return undefined;
     let newPwd = '';
     for (let index = 0; index < password.length; index++) {
@@ -121,3 +127,4 @@ module.exports.getBoard = getBoard;
 module.exports.addUser = addUser;
 module.exports.createBoard = createBoard;
 module.exports.createTable = createTable;
+module.exports.updateBoardName = updateBoardName;
