@@ -30,4 +30,7 @@ router.get('/newName/:id/:name', async(req, res) => {
     res.send(await data.updateBoardName(req.params.id, req.params.name));
 });
 
+router.get('/status/:type/:id/:status', async(req, res) => {
+    res.send(await data.updateStatus(req.params.type, req.params.id, req.params.status));
+});
 module.exports = router;

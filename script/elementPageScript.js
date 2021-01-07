@@ -1,5 +1,6 @@
 //varibles
 const boardID = document.querySelector('.tables').id;
+const URL = 'http://localhost:8080/tables';
 //elements
 
 //board name element
@@ -16,7 +17,7 @@ privateDiv.addEventListener('click', updatePrivateStatus);
 
 //update board name funciton
 async function updateBoardName(event) {
-    let url = 'http://localhost:8080/tables/newName/' + boardID + '/' + event.target.value;
+    let url = URL + '/newName/' + boardID + '/' + event.target.value;
 
     let response = await fetch(url);
 
@@ -27,7 +28,12 @@ async function updateBoardName(event) {
 }
 
 async function updateFavoriteStatus(event) {
-    let url = 'http://localhost:8080/tables/status/' + boardID + '/' + event.target.value;
+    let status = event.target.dataset.status;
+    if (status == 'on') event.target.dataset.status = null;
+    else event.target.dataset.status = 'on';
+    event.target.src = '/file/img/star' + event.target.dataset.status + '.svg';
+
+    let url = URL + '/status/favorite/' + boardID + '/' + event.target.dataset.status;
 
     let response = await fetch(url);
 
@@ -38,7 +44,11 @@ async function updateFavoriteStatus(event) {
 }
 
 async function updatePrivateStatus(event) {
-    let url = 'http://localhost:8080/tables/newName/' + boardID + '/' + event.target.value;
+    let status = event.target.dataset.status;
+    if (status == 'on') event.target.dataset.status = null;
+    else event.target.dataset.status = 'on';
+
+    let url = URL + '/status/private/' + boardID + '/' + event.target.dataset.status;
 
     let response = await fetch(url);
 

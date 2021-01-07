@@ -108,6 +108,18 @@ async function updateBoardName(id, name) {
     return response;
 }
 
+async function updateStatus(type, id, status) {
+    let objID = new ObjectId(id);
+    let collection = await getCollection('tbt', 'board');
+    var board = { _id: objID };
+    var object = {};
+    if (type == 'private') object.private = status;
+    if (type == 'favorite') object.favorite = status;
+    var newvalues = { $set: object };
+    let response = await collection.updateOne(board, newvalues);
+    return response;
+}
+
 async function hashIt(login, password) {
     if (!password) return undefined;
     let newPwd = '';
@@ -128,3 +140,4 @@ module.exports.addUser = addUser;
 module.exports.createBoard = createBoard;
 module.exports.createTable = createTable;
 module.exports.updateBoardName = updateBoardName;
+module.exports.updateStatus = updateStatus;
